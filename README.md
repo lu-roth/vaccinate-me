@@ -1,0 +1,5 @@
+- Clone repository
+- Rename '.example.env.js' to '.env.js'
+- Add the base Url of your vaccine center
+- Add your SMTP Config
+- Maybe adjust IDs in crawl.js
