@@ -37,7 +37,6 @@ puppeteer.launch({headless: true}).then(async browser => {
             return JSON.parse(document.querySelector("body").innerText);
         });
         console.log(innerText);
-        availabilities.push(locations[i])
         if (innerText.availabilities.length) {
             availabilities.push(locations[i])
         }
