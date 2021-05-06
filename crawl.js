@@ -25,7 +25,7 @@ const locations = [{
         name: 'Lebach_nacht'
     }];
 let availabilities = [];
-puppeteer.launch({headless: true}).then(async browser => {
+puppeteer.launch({args: ['--no-sandbox'], headless: true,  executablePath: '/usr/bin/chromium-browser'}).then(async browser => {
     console.log('Start Crawling..')
     for (let i = 0; i < locations.length; i++) {
         console.log('Location: ID ' + locations[i].id + ' ' + locations[i].name)
