@@ -16,15 +16,17 @@ function sendMail(locations) {
             console.log(error);
         } else {
             for (let i=0;i < locations.length; i++){
-                mailOptions.text += locations[i].id + ' ' + locations[i].name + '\n'
+                mailOptions.text += locations[i].id + ' ' + locations[i].name + '\n Link:' + ENV.baseUrl +  locations[i].id + '\n'
             }
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log('Email sent: ' + info.response);
-                }
-            });
+            for (let i=0;i < ENV.mailOptions.length; i++) {
+                transporter.sendMail(ENV.mailOptions[i], function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
+            }
         }
     });
 }
